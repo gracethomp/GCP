@@ -1,7 +1,5 @@
 package nau;
 
-import java.util.ArrayList;
-
 public class GCD {
     public int advancedGCD(int x, int y) {
         int d = 1;
@@ -46,13 +44,13 @@ public class GCD {
         return d * v;
     }
 
-    public int findGCD(ArrayList<Integer> numbers) {
-        if (numbers.isEmpty())
+    public int findGCD(int ...numbers) {
+        if (numbers.length == 0)
             return 0;
 
-        int result = numbers.getFirst();
-        for (int w = 1; w < numbers.size(); w++) {
-            result = advancedGCD(result, numbers.get(w));
+        int result = numbers[0];
+        for (int w = 1; w < numbers.length; w++) {
+            result = advancedGCD(result, numbers[w]);
             if (result == 1)
                 break;
         }
